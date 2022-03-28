@@ -11,6 +11,7 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllers = setupTabbarVC()
+        UITabBar.appearance().backgroundColor = UIColor.systemGray2
     }
 
     private func setupTabbarVC() -> [UIViewController] {
