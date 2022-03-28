@@ -8,7 +8,6 @@
 import UIKit
 
 class TabViewController: UITabBarController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllers = setupTabbarVC()
@@ -16,7 +15,10 @@ class TabViewController: UITabBarController {
 
     private func setupTabbarVC() -> [UIViewController] {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc1 = storyBoard.instantiateViewController(withIdentifier: "Slider") as? ViewController, let vc2 = storyBoard.instantiateViewController(withIdentifier: "Slider") as? ViewController else { fatalError()}
+        guard let vc1 = storyBoard.instantiateViewController(withIdentifier: "Slider") as? ViewController,
+              let vc2 = storyBoard.instantiateViewController(withIdentifier: "Slider") as? ViewController else {
+            fatalError("ViewController not found.")
+        }
 
         vc1.tabBarItem.title = "Slider1"
         vc1.view.backgroundColor = UIColor.systemGreen

@@ -8,5 +8,8 @@
 import Combine
 
 final class ViewModel {
-    var sliderValue: Double?
+    static var sliderValue: Float?
+    static func changedValue(_ value: Float) {
+        ViewModel.sliderValue = value
+    }
 }

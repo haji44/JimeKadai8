@@ -22,23 +22,16 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        slider.value = SliderModel.sliderValue ?? 0.5
-        SliderModel.changedValue(slider.value)
-        let currentValue = SliderModel.sliderValue ?? 0
+        slider.value = ViewModel.sliderValue ?? 0.5
+        ViewModel.changedValue(slider.value)
+        let currentValue = ViewModel.sliderValue ?? 0
         resultLabel.text = "\(String(describing: currentValue))"
     }
 
-    @IBAction func sliderChange(_ sender: UISlider) {
+    @IBAction private func sliderChange(_ sender: UISlider) {
         let value = sender.value
-        SliderModel.changedValue(value)
-        let currentValue = SliderModel.sliderValue ?? 0
+        ViewModel.changedValue(value)
+        let currentValue = ViewModel.sliderValue ?? 0
         resultLabel.text = "\(String(describing: currentValue))"
-    }
-}
-
-class SliderModel {
-    static var sliderValue: Float?
-    static func changedValue(_ value: Float) {
-        SliderModel.sliderValue = value
     }
 }
