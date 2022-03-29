@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     private var minimumValue: Float = 0
     private var maximumValue: Float = 1
 
+    private var valueRepository: ValueRepository!
+
+    func setup(valueRepository: ValueRepository) {
+        self.valueRepository = valueRepository
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         slider.minimumValue = minimumValue
@@ -22,16 +28,16 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        slider.value = ViewModel.sliderValue ?? 0.5
-        ViewModel.changedValue(slider.value)
-        let currentValue = ViewModel.sliderValue ?? 0
+        slider.value = valueRepository.sliderValue ?? 0.5
+        valueRepository.changedValue(slider.value)
+        let currentValue = valueRepository.sliderValue ?? 0
         resultLabel.text = "\(String(describing: currentValue))"
     }
 
     @IBAction private func sliderChange(_ sender: UISlider) {
         let value = sender.value
-        ViewModel.changedValue(value)
-        let currentValue = ViewModel.sliderValue ?? 0
+        valueRepository.changedValue(value)
+        let currentValue = valueRepository.sliderValue ?? 0
         resultLabel.text = "\(String(describing: currentValue))"
     }
 }

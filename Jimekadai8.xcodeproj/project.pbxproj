@@ -14,7 +14,7 @@
 		209C8DE027F069A200452090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209C8DDF27F069A200452090 /* Assets.xcassets */; };
 		209C8DE327F069A200452090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209C8DE127F069A200452090 /* LaunchScreen.storyboard */; };
 		209C8DEB27F0D09500452090 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C8DEA27F0D09500452090 /* TabViewController.swift */; };
-		209C8DED27F0D65800452090 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C8DEC27F0D65800452090 /* ViewModel.swift */; };
+		209C8DED27F0D65800452090 /* ValueRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C8DEC27F0D65800452090 /* ValueRepository.swift */; };
 		21A9625E53C0AF87FD97CC7E /* Pods_Jimekadai8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26093CD160DEB22D2A4C4593 /* Pods_Jimekadai8.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		209C8DE227F069A200452090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		209C8DE427F069A200452090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209C8DEA27F0D09500452090 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		209C8DEC27F0D65800452090 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		209C8DEC27F0D65800452090 /* ValueRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepository.swift; sourceTree = "<group>"; };
 		223D46EED322A0CE4A457F61 /* Pods-Jimekadai8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jimekadai8.debug.xcconfig"; path = "Target Support Files/Pods-Jimekadai8/Pods-Jimekadai8.debug.xcconfig"; sourceTree = "<group>"; };
 		26093CD160DEB22D2A4C4593 /* Pods_Jimekadai8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jimekadai8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4020CD15D37240F20BC022E4 /* Pods-Jimekadai8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jimekadai8.release.xcconfig"; path = "Target Support Files/Pods-Jimekadai8/Pods-Jimekadai8.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 				209C8DD827F069A000452090 /* SceneDelegate.swift */,
 				209C8DEA27F0D09500452090 /* TabViewController.swift */,
 				209C8DDA27F069A000452090 /* ViewController.swift */,
-				209C8DEC27F0D65800452090 /* ViewModel.swift */,
+				209C8DEC27F0D65800452090 /* ValueRepository.swift */,
 				209C8DDC27F069A000452090 /* Main.storyboard */,
 				209C8DDF27F069A200452090 /* Assets.xcassets */,
 				209C8DE127F069A200452090 /* LaunchScreen.storyboard */,
@@ -104,8 +104,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 209C8DE727F069A200452090 /* Build configuration list for PBXNativeTarget "Jimekadai8" */;
 			buildPhases = (
-				20F4BCE027F145C9008232E4 /* ShellScript */,
 				AE2137D7F9529E03E2104A55 /* [CP] Check Pods Manifest.lock */,
+				20F4BCE027F145C9008232E4 /* ShellScript */,
 				209C8DCF27F069A000452090 /* Sources */,
 				209C8DD027F069A000452090 /* Frameworks */,
 				209C8DD127F069A000452090 /* Resources */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209C8DED27F0D65800452090 /* ViewModel.swift in Sources */,
+				209C8DED27F0D65800452090 /* ValueRepository.swift in Sources */,
 				209C8DEB27F0D09500452090 /* TabViewController.swift in Sources */,
 				209C8DDB27F069A000452090 /* ViewController.swift in Sources */,
 				209C8DD727F069A000452090 /* AppDelegate.swift in Sources */,
@@ -372,6 +372,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,6 +402,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
