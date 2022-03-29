@@ -26,6 +26,11 @@ class TabViewController: UITabBarController {
 
         vc2.tabBarItem.title = "Slider2"
         vc2.view.backgroundColor = UIColor.systemPink
+
+        let valueRepository = ValueRepository()
+        vc1.setup(valueRepository: valueRepository)
+        vc2.setup(valueRepository: valueRepository)
+
         return [vc1, vc2]
     }
 }
